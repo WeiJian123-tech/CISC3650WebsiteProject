@@ -1,0 +1,13 @@
+p {
+    color: black;
+}
+
+.form {
+    background-color: rgb(245,245,220);
+}
+
+.checkboxDiv {
+    width: 0vw;
+    max-width: 2vw;
+    
+}
