@@ -11,3 +11,11 @@ p {
     max-width: 2vw;
     
 }
+
+#uncompletedList {
+    background-color: pink;
+}
+
+#completedList {
+    background-color: lightgreen;
+}

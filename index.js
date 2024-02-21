@@ -54,7 +54,19 @@ function addList(task, date) {
     createRowDiv.appendChild(createColDiv);
 
     //Appends createRowDiv to parent fieldset element with id="fieldList".
-    const fieldList = document.getElementById("fieldList");
-    fieldList.appendChild(createRowDiv);
+    const uncompletedList = document.getElementById("uncompletedList");
+    uncompletedList.appendChild(createRowDiv);
+
+    const completedList = document.getElementById("completedList");
+
+    //Completes and Un-completes tasks by putting uncompleted tasks into completed field and vise-versa.
+    createInput.addEventListener("change", () => {
+        if(createInput.checked) {
+            completedList.appendChild(createRowDiv);
+            
+        } else {
+            uncompletedList.appendChild(createRowDiv);
+        }
+    });
 
 }
