@@ -47,6 +47,8 @@ function addList(task, date) {
 
     //Appends List element to its parent div element.
     createColDiv.appendChild(createListItem);
+
+    //Create a function for repetitive code.
     
 
     //Appends createColBoxDiv and createColDiv to parent div with .row class

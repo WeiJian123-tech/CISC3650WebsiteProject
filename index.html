@@ -16,6 +16,7 @@
     Bootstrap Background Color: https://getbootstrap.com/docs/5.0/utilities/background/#background-color
     How to set type attribute to an html element in javascript:https://search.brave.com/search?q=How+to+set+type+attribute+to+an+html+element+in+javascript
     Checkbox onlclick() function: https://www.delftstack.com/howto/javascript/manage-html-checkboxes-onclick-in-javascript/#manage-html-checkboxes-with-onclick-event-using-javascript
+    Bootstrap Accordian: https://getbootstrap.com/docs/5.3/components/accordion/
 -->
 
 
@@ -54,19 +55,188 @@
 
             <div class="row align-items-center">
                 <form id="thisForm" class="form">
-                    <label for="task">Task:</label>
-                    <input type="text" name="task" id="task" required />
 
-                    <label for="date">Date:</label>
-                    <input type="date" name="date" id="date" />
+                    <div>
+                        <label for="task">Task:</label>
+                        <input type="text" name="task" id="task" required />
 
-                    <button type="submit">Submit</button>
+                        <label for="date">Date:</label>
+                        <input type="date" name="date" id="date" />
 
-                    <div class="row align-items-center">
+                        <button type="submit">Submit</button>
+                    </div>
+
+                    <div>
+                        <button type="button">Check All/Uncheck All</button>
+                        <button type="button">Toggle ul or ol</button>
+                        <button type="button">Paint all</button>
+                        <button type="button">Delete All</button>
+                    </div>
+
+                    <div class="row align-items-center d-flex">
                         <ul id="taskList">
 
                             <fieldset id="uncompletedList">
-                                
+                                <div class="row">
+
+                                    <div class="col checkboxDiv">
+                                        <input type="checkbox">
+                                    </div>
+
+                                    <div class="col listDiv">
+                                        <li> Test List </li>
+                                    </div>
+
+                                    <div class="col addSubDiv">
+                                        <button type="button">Subtask</button>
+                                    </div>
+
+                                    <div class="col colorCodeDiv">
+                                        <button type="button">Paint</button>
+                                    </div>
+
+                                    <div class="col buttonDiv">
+                                        <button type="button">Delete</button>
+                                    </div>
+
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <div class="row align-tiems-center d-flex">
+                                            <div class="col checkboxDiv">
+                                                <input type="checkbox">
+                                            </div>
+    
+                                            <div class="col">
+                                                <li>
+                                                    Sub List Item #1
+                                                </li>
+                                            </div>
+    
+                                            <div class="col addSubDiv">
+                                                <button type="button">Subtask</button>
+                                            </div>
+        
+                                            <div class="col colorCodeDiv">
+                                                <button type="button">Paint</button>
+                                            </div>
+        
+                                            <div class="col buttonDiv">
+                                                <button type="button">Delete</button>
+                                            </div>
+    
+                                        </div>
+
+                                        <div class="row align-tiems-center d-flex">
+                                            <div class="col checkboxDiv">
+                                                <input type="checkbox">
+                                            </div>
+    
+                                            <div class="col">
+                                                <li>
+                                                    Sub List Item #2
+                                                </li>
+                                            </div>
+    
+                                            <div class="col addSubDiv">
+                                                <button type="button">Subtask</button>
+                                            </div>
+        
+                                            <div class="col colorCodeDiv">
+                                                <button type="button">Paint</button>
+                                            </div>
+        
+                                            <div class="col buttonDiv">
+                                                <button type="button">Delete</button>
+                                            </div>
+    
+                                        </div>
+
+                                    </ul>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col checkboxDiv">
+                                        <input type="checkbox">
+                                    </div>
+
+                                    <div class="col listDiv">
+                                        <li> Test List </li>
+                                    </div>
+
+                                    <div class="col addSubDiv">
+                                        <button type="button">Subtask</button>
+                                    </div>
+
+                                    <div class="col colorCodeDiv">
+                                        <button type="button">Paint</button>
+                                    </div>
+
+                                    <div class="col buttonDiv">
+                                        <button type="button">Delete</button>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div>
+                                    <ul>
+                                        <div class="row align-tiems-center d-flex">
+                                            <div class="col checkboxDiv">
+                                                <input type="checkbox">
+                                            </div>
+    
+                                            <div class="col">
+                                                <li>
+                                                    Sub List Item #1
+                                                </li>
+                                            </div>
+    
+                                            <div class="col addSubDiv">
+                                                <button type="button">Subtask</button>
+                                            </div>
+        
+                                            <div class="col colorCodeDiv">
+                                                <button type="button">Paint</button>
+                                            </div>
+        
+                                            <div class="col buttonDiv">
+                                                <button type="button">Delete</button>
+                                            </div>
+    
+                                        </div>
+
+                                        <div class="row align-tiems-center d-flex">
+                                            <div class="col checkboxDiv">
+                                                <input type="checkbox">
+                                            </div>
+    
+                                            <div class="col">
+                                                <li>
+                                                    Sub List Item #2
+                                                </li>
+                                            </div>
+    
+                                            <div class="col addSubDiv">
+                                                <button type="button">Subtask</button>
+                                            </div>
+        
+                                            <div class="col colorCodeDiv">
+                                                <button type="button">Paint</button>
+                                            </div>
+        
+                                            <div class="col buttonDiv">
+                                                <button type="button">Delete</button>
+                                            </div>
+    
+                                        </div>
+
+                                    </ul>
+                                </div>
+
                             </fieldset>
 
                             <fieldset id="completedList">

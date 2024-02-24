@@ -6,10 +6,29 @@ p {
     background-color: rgb(245,245,220);
 }
 
+/*
+max-width: (x)vw; to change position of elements within the div that contains a list.
+Nearer to the list <- 100 && 0 -> Farther away from list 
+*/
+
 .checkboxDiv {
-    width: 0vw;
     max-width: 2vw;
-    
+}
+
+.listDiv {
+    max-width: 10vw;
+}
+
+.addSubDiv {
+    max-width: 15vw;
+}
+
+.colorCodeDiv {
+    max-width: 10vw;
+}
+
+.buttonDiv {
+    max-width: 4vw;
 }
 
 #uncompletedList {
