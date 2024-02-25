@@ -11,12 +11,13 @@ max-width: (x)vw; to change position of elements within the div that contains a 
 Nearer to the list <- 100 && 0 -> Farther away from list 
 */
 
+
 .checkboxDiv {
     max-width: 2vw;
 }
 
 .listDiv {
-    max-width: 10vw;
+    max-width: 33vw;
 }
 
 .addSubDiv {
@@ -28,13 +29,14 @@ Nearer to the list <- 100 && 0 -> Farther away from list
 }
 
 .buttonDiv {
-    max-width: 4vw;
+    max-width: 5vw;
 }
 
-#uncompletedList {
+
+#uncompletedTasks {
     background-color: pink;
 }
 
-#completedList {
+#completedTasks {
     background-color: lightgreen;
 }

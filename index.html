@@ -17,6 +17,8 @@
     How to set type attribute to an html element in javascript:https://search.brave.com/search?q=How+to+set+type+attribute+to+an+html+element+in+javascript
     Checkbox onlclick() function: https://www.delftstack.com/howto/javascript/manage-html-checkboxes-onclick-in-javascript/#manage-html-checkboxes-with-onclick-event-using-javascript
     Bootstrap Accordian: https://getbootstrap.com/docs/5.3/components/accordion/
+    No Nested Buttons: https://stackoverflow.com/questions/39386497/can-i-nest-button-inside-another-button
+    Mozilla Anchor Tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 -->
 
 
@@ -76,85 +78,7 @@
                     <div class="row align-items-center d-flex">
                         <ul id="taskList">
 
-                            <fieldset id="uncompletedList">
-                                <div class="row">
-
-                                    <div class="col checkboxDiv">
-                                        <input type="checkbox">
-                                    </div>
-
-                                    <div class="col listDiv">
-                                        <li> Test List </li>
-                                    </div>
-
-                                    <div class="col addSubDiv">
-                                        <button type="button">Subtask</button>
-                                    </div>
-
-                                    <div class="col colorCodeDiv">
-                                        <button type="button">Paint</button>
-                                    </div>
-
-                                    <div class="col buttonDiv">
-                                        <button type="button">Delete</button>
-                                    </div>
-
-                                </div>
-
-                                <div>
-                                    <ul>
-                                        <div class="row align-tiems-center d-flex">
-                                            <div class="col checkboxDiv">
-                                                <input type="checkbox">
-                                            </div>
-    
-                                            <div class="col">
-                                                <li>
-                                                    Sub List Item #1
-                                                </li>
-                                            </div>
-    
-                                            <div class="col addSubDiv">
-                                                <button type="button">Subtask</button>
-                                            </div>
-        
-                                            <div class="col colorCodeDiv">
-                                                <button type="button">Paint</button>
-                                            </div>
-        
-                                            <div class="col buttonDiv">
-                                                <button type="button">Delete</button>
-                                            </div>
-    
-                                        </div>
-
-                                        <div class="row align-tiems-center d-flex">
-                                            <div class="col checkboxDiv">
-                                                <input type="checkbox">
-                                            </div>
-    
-                                            <div class="col">
-                                                <li>
-                                                    Sub List Item #2
-                                                </li>
-                                            </div>
-    
-                                            <div class="col addSubDiv">
-                                                <button type="button">Subtask</button>
-                                            </div>
-        
-                                            <div class="col colorCodeDiv">
-                                                <button type="button">Paint</button>
-                                            </div>
-        
-                                            <div class="col buttonDiv">
-                                                <button type="button">Delete</button>
-                                            </div>
-    
-                                        </div>
-
-                                    </ul>
-                                </div>
+                            <fieldset id="uncompletedTasks">
 
                                 <div class="row">
 
@@ -180,16 +104,15 @@
 
                                 </div>
 
-
-
                                 <div>
-                                    <ul>
+                                    <ul id="subTaskList">
+
                                         <div class="row align-tiems-center d-flex">
                                             <div class="col checkboxDiv">
                                                 <input type="checkbox">
                                             </div>
     
-                                            <div class="col">
+                                            <div class="col listDiv">
                                                 <li>
                                                     Sub List Item #1
                                                 </li>
@@ -214,7 +137,7 @@
                                                 <input type="checkbox">
                                             </div>
     
-                                            <div class="col">
+                                            <div class="col listDiv">
                                                 <li>
                                                     Sub List Item #2
                                                 </li>
@@ -239,7 +162,7 @@
 
                             </fieldset>
 
-                            <fieldset id="completedList">
+                            <fieldset id="completedTasks">
 
                             </fieldset>
                             
