@@ -21,7 +21,7 @@ Nearer to the list <- 100 && 0 -> Farther away from list
 }
 
 .addSubDiv {
-    max-width: 15vw;
+    max-width: 5vw;
 }
 
 .colorCodeDiv {
@@ -34,7 +34,7 @@ Nearer to the list <- 100 && 0 -> Farther away from list
 
 
 #uncompletedTasks {
-    background-color: pink;
+    background-color: lightblue;
 }
 
 #completedTasks {

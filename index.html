@@ -19,6 +19,15 @@
     Bootstrap Accordian: https://getbootstrap.com/docs/5.3/components/accordion/
     No Nested Buttons: https://stackoverflow.com/questions/39386497/can-i-nest-button-inside-another-button
     Mozilla Anchor Tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+    Replace HTML element: https://www.tutorialspoint.com/how-to-replace-an-html-element-with-another-one-using-javascript
+    Input Color: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
+    JavaScript Remove: https://developer.mozilla.org/en-US/docs/Web/API/Element/remove
+    JavaScript Background Color: https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
+    JavaScript QuerySelectorAll: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+    JavaScript Random ID Generator: https://dev.to/rahmanfadhil/how-to-generate-unique-id-in-javascript-1b13
+    JavaScript getElementByID: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+    JavaScript QuerySelector Bug Fix: https://bobbyhadz.com/blog/javascript-failed-to-execute-queryselector-on-document
+    JavaScript Set Input Required: https://www.w3schools.com/jsref/prop_text_required.asp
 -->
 
 
@@ -65,102 +74,30 @@
                         <label for="date">Date:</label>
                         <input type="date" name="date" id="date" />
 
-                        <button type="submit">Submit</button>
+                        <button type="submit" id="taskSubmit">Submit</button>
                     </div>
 
+                    <!--
                     <div>
                         <button type="button">Check All/Uncheck All</button>
                         <button type="button">Toggle ul or ol</button>
                         <button type="button">Paint all</button>
                         <button type="button">Delete All</button>
                     </div>
+                    -->
 
                     <div class="row align-items-center d-flex">
                         <ul id="taskList">
 
+                            <h6>Uncompleted Tasks:</h6>
+
                             <fieldset id="uncompletedTasks">
 
-                                <div class="row">
-
-                                    <div class="col checkboxDiv">
-                                        <input type="checkbox">
-                                    </div>
-
-                                    <div class="col listDiv">
-                                        <li> Test List </li>
-                                    </div>
-
-                                    <div class="col addSubDiv">
-                                        <button type="button">Subtask</button>
-                                    </div>
-
-                                    <div class="col colorCodeDiv">
-                                        <button type="button">Paint</button>
-                                    </div>
-
-                                    <div class="col buttonDiv">
-                                        <button type="button">Delete</button>
-                                    </div>
-
-                                </div>
-
-                                <div>
-                                    <ul id="subTaskList">
-
-                                        <div class="row align-tiems-center d-flex">
-                                            <div class="col checkboxDiv">
-                                                <input type="checkbox">
-                                            </div>
-    
-                                            <div class="col listDiv">
-                                                <li>
-                                                    Sub List Item #1
-                                                </li>
-                                            </div>
-    
-                                            <div class="col addSubDiv">
-                                                <button type="button">Subtask</button>
-                                            </div>
-        
-                                            <div class="col colorCodeDiv">
-                                                <button type="button">Paint</button>
-                                            </div>
-        
-                                            <div class="col buttonDiv">
-                                                <button type="button">Delete</button>
-                                            </div>
-    
-                                        </div>
-
-                                        <div class="row align-tiems-center d-flex">
-                                            <div class="col checkboxDiv">
-                                                <input type="checkbox">
-                                            </div>
-    
-                                            <div class="col listDiv">
-                                                <li>
-                                                    Sub List Item #2
-                                                </li>
-                                            </div>
-    
-                                            <div class="col addSubDiv">
-                                                <button type="button">Subtask</button>
-                                            </div>
-        
-                                            <div class="col colorCodeDiv">
-                                                <button type="button">Paint</button>
-                                            </div>
-        
-                                            <div class="col buttonDiv">
-                                                <button type="button">Delete</button>
-                                            </div>
-    
-                                        </div>
-
-                                    </ul>
-                                </div>
+                                
 
                             </fieldset>
+
+                            <h6>Completed Tasks:</h6>
 
                             <fieldset id="completedTasks">
 
