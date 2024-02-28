@@ -1,25 +1,73 @@
 //When website page has loaded...
 window.onload=function() {
     //Gets input information from form and outputs a task.
-    document.getElementById("thisForm").onsubmit=function(e) {
+    document.getElementById("inputForm").onsubmit=function(e) {
         e.preventDefault(); //Prevents default form Get and Post methods.
 
         const task = document.getElementById("task").value;
         const date = document.getElementById("date").value;
 
-        //console.log("Task: " + task + " | Date: " + date);
+        const subTasks = document.querySelectorAll("input.subtasks");
 
-        addTask(task, date);
+        const subDates = document.querySelectorAll("input.subdates");
+
+        /*
+
+        console.log("Task: " + task + " | Date: " + date);
+
+        for(const s of subTasks) {
+            console.log(s.value);
+        }
+
+        for(const d of subDates) {
+            console.log(d.value);
+        }
+
+        */
+
+        addTask(task, date, subTasks, subDates);
+
     }
 }
 
-/*
-Creates a tasks that can be checked on or off, a list item that displays the tasks and possibly a date,
-a button to create subtask(s) underneath, a button that changes the color of the tasks, and 
-a delete button to remove a task.
-*/
+function addSubTaskInput() {
+    const subTaskInputDiv = document.getElementById("subTaskInputs");
 
-function addTask(task, date) {
+    const subTaskInputLabel = document.createElement("label");
+    subTaskInputLabel.setAttribute('for', 'subtask');
+
+    const subTaskInputLabelTxt = document.createTextNode("Subtask: ");
+
+    subTaskInputLabel.appendChild(subTaskInputLabelTxt);
+
+    const subTaskInput = document.createElement("input");
+    subTaskInput.setAttribute('type', 'text');
+    subTaskInput.setAttribute('name', 'subtask');
+    subTaskInput.setAttribute('class', 'subtasks');
+
+    const subTaskDateLabel = document.createElement("label");
+    subTaskDateLabel.setAttribute('for', 'date');
+
+    const subTaskDateLabelTxt = document.createTextNode("Date: ");
+
+    subTaskDateLabel.appendChild(subTaskDateLabelTxt);
+
+    const subDateInput = document.createElement("input");
+    subDateInput.setAttribute('type', 'date');
+    subDateInput.setAttribute('name', 'date');
+    subDateInput.setAttribute('class', 'subdates');
+
+    subTaskInputDiv.appendChild(subTaskInputLabel);
+    subTaskInputDiv.appendChild(subTaskInput);
+    subTaskInputDiv.appendChild(subTaskDateLabel);
+    subTaskInputDiv.appendChild(subDateInput);
+}
+
+
+/*
+Gets html fieldset ids, generates unique ids for divs inside the fieldsets, and adds a task to the webpage.
+*/
+function addTask(task, date, subtasks, subdates) {
 
     //Appends rowDiv to parent fieldset element with id="fieldList".
 
@@ -29,215 +77,55 @@ function addTask(task, date) {
     const randomID1 = Math.floor(Math.random() * Date.now());
     const randomID2 = Math.floor(Math.random() * Date.now());
 
-    addTaskItem(uncompletedTasks, completedTasks, task, date, randomID1, randomID2);
+    addTaskItem(uncompletedTasks, completedTasks, task, date, subtasks, subdates, randomID1, randomID2);
 
 }
 
 /*
-Creates the task item the the user requests.
+Creates a task that can be checked on or off, a list item that displays the tasks and possibly a date, 
+a button that changes the color of the tasks, a delete button to remove a task, and possible subtasks underneath.
 */
-function addTaskItem(uncompletedTasks, completedTasks, task, date, id1, id2) {
+function addTaskItem(uncompletedTasks, completedTasks, task, date, subtasks, subdates, id1, id2) {
 
-    //Parent div that encapsulates the main task and the subtask.
+    //Container div that encapsulates a task and its subtasks.
     const taskItem = document.createElement("div");
     taskItem.setAttribute('id', id1);
 
-    //Create main task parent div with .row class to store child divs with .col class
-    const rowDiv = document.createElement("div");
-    rowDiv.setAttribute('class', 'row');
-    rowDiv.setAttribute('id', id2);
+    //Container div to store a task
+    const taskDiv = document.createElement("div");
+    taskDiv.setAttribute('class', 'row');
+    taskDiv.setAttribute('id', id2);
 
-    addCheckBox(uncompletedTasks, completedTasks, rowDiv);
-    addListItem(rowDiv, task, date);
-    
 
-    //Create parent div to store all subtask items
-    const rowSubDiv = document.createElement("div");
+    //Container div to store a task's subtasks
+    const subtaskDiv = document.createElement("div");
 
-    //Create a nested list within the parent list.
+    //Creates a nested list within the HTML parent list.
     const nestedList = document.createElement("ul");
 
-    //Creates a div and a nested ul.
-    rowSubDiv.appendChild(nestedList);
 
-    //addSubTaskButton(rowDiv, nestedList, task, date);
-    addColorPicker(rowDiv);
-    addDeleteButton(taskItem, rowDiv);
 
-    taskItem.appendChild(rowDiv);
-    taskItem.appendChild(rowSubDiv);
+    addCheckBox(uncompletedTasks, completedTasks, taskItem, taskDiv, nestedList, subtasks, subdates);
+    addListItem(taskDiv, task, date);
+    addColorPicker(taskItem, taskDiv);
+    addDeleteButton(taskItem, taskDiv);
+
+
+
+    subtaskDiv.appendChild(nestedList);
+
+    taskItem.appendChild(taskDiv);
+    taskItem.appendChild(subtaskDiv);
 
     uncompletedTasks.appendChild(taskItem);
-}
+    //completedTasks.appendChild(taskItem);
 
-/*
-Need to revise program for subtasks. 
-Cannot have child forms within forms.
-*/
-
-/*
-function addSubTaskButton(parentDiv, list, task, date) {
-
-    const subTaskBtnDiv = document.createElement("div");
-    subTaskBtnDiv.setAttribute('class', 'col addSubDiv');
-
-    const subTaskBtn = document.createElement("button");
-    subTaskBtn.setAttribute('type', 'button'); //submit
-    //createBtn.setAttribute('onclick', '');
-
-    const subBtnText = document.createTextNode("Subtask");
-
-    subTaskBtn.appendChild(subBtnText);
-
-
-    const taskInputDiv = document.createElement("div");
-    taskInputDiv.setAttribute('class', 'col');
-
-    const subTaskLabel = document.createElement("label");
-    subTaskLabel.setAttribute('for', 'subTask');
-
-    const subTaskInput = document.createElement("input");
-    subTaskInput.setAttribute('type', 'text');
-    subTaskInput.setAttribute('name', 'subTask');
-    subTaskInput.setAttribute('id', 'subTask');
-
-    const subDateLabel = document.createElement("label");
-    subDateLabel.setAttribute('for', 'subDate');
-
-    const subDateInput = document.createElement("input");
-    subDateInput.setAttribute('type', 'date');
-    subDateInput.setAttribute('name', 'subDate');
-    subDateInput.setAttribute('id', 'subDate');
-
-    const subSubmitBtn = document.createElement("button");
-    subSubmitBtn.setAttribute('type', 'submit');
-
-    const subSubmitBtnTxt = document.createTextNode("Submit");
-    subSubmitBtn.appendChild(subSubmitBtnTxt);
-
-    
-    taskInputDiv.appendChild(subTaskLabel);
-    taskInputDiv.appendChild(subTaskInput);
-    taskInputDiv.appendChild(subDateLabel);
-    taskInputDiv.appendChild(subDateInput);
-    taskInputDiv.appendChild(subSubmitBtn);
-
-
-    subTaskBtn.addEventListener("click", () => {
-        if(subTaskBtn.click) {
-
-        }
-    });
-
-    subTaskBtnDiv.appendChild(subTaskBtn);
-
-    parentDiv.appendChild(subTaskBtnDiv);
-    parentDiv.appendChild(taskInputDiv);
-}
-*/
-
-/*
-Creates an input of type="color" for the user to select a color for their task.
-*/
-function addColorPicker(parentDiv) {
-
-    const colorInputDiv = document.createElement("div");
-    colorInputDiv.setAttribute('class', 'col colorCodeDiv');
-
-    const colorInput = document.createElement("input");
-    colorInput.setAttribute('type', 'color');
-    colorInput.setAttribute('value', '#d900df');
-
-    //console.log(parentDiv.id);
-
-    const parentDivID = "[id='" + parentDiv.id + "']";
-
-    colorInput.addEventListener("change", (event) => {
-        const updateDiv = document.querySelector(parentDivID);
-
-        if(updateDiv) {
-            updateDiv.style.backgroundColor = event.target.value;
-        }
-    });
-
-    colorInput.select();
-
-    colorInputDiv.appendChild(colorInput);
-
-    parentDiv.appendChild(colorInputDiv);
-    
-}
-
-function addDeleteButton(grandparentDiv, parentDiv) {
-
-    const deleteBtnDiv = document.createElement("div");
-    deleteBtnDiv.setAttribute('class', 'col buttonDiv');
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.setAttribute('type', 'button');
-
-    const deleteBtnText = document.createTextNode("Delete");
-
-    deleteBtn.appendChild(deleteBtnText);
-
-    const grandparentDivID = "[id='" + grandparentDiv.id + "']";
-
-    deleteBtn.addEventListener("click", () => {
-        if(deleteBtn.click) {
-            const deleteDiv = document.querySelector(grandparentDivID);
-            deleteDiv.remove();
-        } else {
-            console.log("Not Clicked");
-        }
-    });
-
-
-    deleteBtnDiv.appendChild(deleteBtn);
-
-    parentDiv.appendChild(deleteBtnDiv);
-
-}
-
-/*
-Creates a subtask item after the user has entered in information about their subtask
-and pressed the button to create a subtask.
-
-When the subtask button is clicked, creates divs with checkbox and list item.
-*/
-/*
-function addSubtaskItem(nestedList, task, date) {
-
-    const subListDiv = document.createElement("div");
-    subListDiv.setAttribute('class', 'd-flex row align-items-center');
-
-    addSubCheckBox(subListDiv);
-    addListItem(subListDiv, task, date); //Make new input for user subtask and date.
-
-    nestedList.appendChild(subListDiv);
-
-}
-*/
-
-//Cannot delete tasks when completed due to the delete button referencing different ids
-function addSubCheckBox(parentDiv) {
-    //Fist div element
-    const checkBoxDiv = document.createElement("div");
-    checkBoxDiv.setAttribute('class', 'col checkboxDiv');
-
-    //Create HTML input element for parent checkBoxDiv element
-    const checkBox = document.createElement("input");
-    checkBox.setAttribute("type", "checkbox");
-
-    //Appends HTML input element to its parent div tags
-    checkBoxDiv.appendChild(checkBox);
-
-    parentDiv.appendChild(checkBoxDiv);
 }
 
 /*
 Creates a checkbox for each task
 */
-function addCheckBox(uncompletedTasks, completedTasks, parentDiv) {
+function addCheckBox(uncompletedTasks, completedTasks, grandparentDiv, parentDiv, nestedList, subtasks, subdates) {
 
     //Fist div element
     const checkBoxDiv = document.createElement("div");
@@ -246,21 +134,124 @@ function addCheckBox(uncompletedTasks, completedTasks, parentDiv) {
     //Create HTML input element for parent checkBoxDiv element
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
-
-    //Completes and Un-completes tasks by putting uncompleted tasks into completed field and vise-versa.
-    checkBox.addEventListener("change", () => {
-        if(checkBox.checked) {
-            completedTasks.appendChild(parentDiv);
-        } else {
-            uncompletedTasks.appendChild(parentDiv);
-        }
-    });
+    checkBox.setAttribute("class", "checkBox");
 
     //Appends HTML input element to its parent div tags
     checkBoxDiv.appendChild(checkBox);
 
     parentDiv.appendChild(checkBoxDiv);
+
+    //console.log("subCheckBox: " + subCheckBox);
+
+    const subtaskArr = [];
+    const subdateArr = [];
+    
+    for(const s of subtasks) {
+        subtaskArr.push(s.value);
+    }
+
+    console.log("subtask array: " + subtaskArr);
+
+    for(const d of subdates) {
+        subdateArr.push(d.value);
+    }
+
+    console.log("subtask date array: " + subdateArr);
+
+
+    for(i = 0; i < subtaskArr.length; i++) {
+        //Container div that stores subtask components
+        const subtaskDiv = document.createElement("div");
+        subtaskDiv.setAttribute('class', 'row');
+        
+        //div element that stores subtask checkboxes
+        const checkBoxSubDiv = document.createElement("div");
+        checkBoxSubDiv.setAttribute('class', 'col checkboxDiv');
+        
+        //Create HTML input element for parent checkBoxDiv element
+        const subCheckBox = document.createElement("input");
+        subCheckBox.setAttribute("type", "checkbox");
+        subCheckBox.setAttribute("class", "subCheckBox");
+        
+        const subtask = subtaskArr[i];
+        const subdate = subdateArr[i];
+
+        //console.log("subtask: " + subtask + " subdate: " + subdate);
+
+        appendSubtask(checkBoxSubDiv, subCheckBox, subtaskDiv, subtask, subdate, nestedList);
+
+        //Completes and Un-completes tasks by putting uncompleted tasks into completed field and vise-versa.
+        //Checks subtask checkboxes in addition to the main task checkbox
+        checkBox.addEventListener("change", () => {
+            if(checkBox.checked) {
+                subCheckBox.checked = true;
+
+                completedTasks.appendChild(grandparentDiv);
+            } else {
+                subCheckBox.checked = false;
+
+                uncompletedTasks.appendChild(grandparentDiv);
+            }
+        });
+    }
+
+    //Checks only the main task checkbox without any subtask checkboxes.
+    checkBox.addEventListener("change", () => {
+        if(checkBox.checked) {
+            grandparentDiv.style.boxShadow = "10px 10px 10px 10px lightgreen"; //Produce a glow for user feedback
+
+            completedTasks.appendChild(grandparentDiv);
+        } else {
+            grandparentDiv.style.boxShadow = "0px 0px 0px 0px lightblue"; //Hide glow to indicate undo of completed task
+
+            uncompletedTasks.appendChild(grandparentDiv);
+        }
+    });
+
+    
 }
+
+function appendSubtask(checkBoxSubDiv, subCheckBox, subtaskDiv, subtask, subdate, nestedList) {
+    
+
+    checkBoxSubDiv.appendChild(subCheckBox);
+    subtaskDiv.appendChild(checkBoxSubDiv);
+
+    addListItem(subtaskDiv, subtask, subdate); //for loop repeats function but not const variables
+
+    nestedList.appendChild(subtaskDiv);
+}
+
+/*
+function addSubTaskItem(nestedList, subtask, subdate) {
+
+    //Container div that stores subtask components
+    const subtaskDiv = document.createElement("div");
+    subtaskDiv.setAttribute('class', 'row');
+
+    addSubCheckBox(subtaskDiv);
+    addListItem(subtaskDiv, subtask, subdate);
+
+    nestedList.appendChild(subtaskDiv);
+    
+}
+
+function addSubCheckBox(parentDiv) {
+
+    //Fist div element
+    const checkBoxSubDiv = document.createElement("div");
+    checkBoxSubDiv.setAttribute('class', 'col checkboxDiv');
+
+    //Create HTML input element for parent checkBoxDiv element
+    const subCheckBox = document.createElement("input");
+    subCheckBox.setAttribute("type", "checkbox");
+    subCheckBox.setAttribute("class", "subCheckBox");
+
+    checkBoxSubDiv.appendChild(subCheckBox);
+
+    parentDiv.appendChild(checkBoxSubDiv);
+}
+*/
 
 /*Creates a list item */
 function addListItem(parentDiv, task, date) {
@@ -280,3 +271,68 @@ function addListItem(parentDiv, task, date) {
 
     parentDiv.appendChild(listItemDiv);
 }
+
+/*
+Creates an input of type="color" for the user to select a color for their task.
+*/
+function addColorPicker(grandparentDiv , parentDiv) {
+
+    const colorInputDiv = document.createElement("div");
+    colorInputDiv.setAttribute('class', 'col colorCodeDiv');
+
+    const colorInput = document.createElement("input");
+    colorInput.setAttribute('type', 'color');
+    colorInput.setAttribute('value', '#d900df');
+
+    //console.log(parentDiv.id);
+
+    const grandparentDivID = "[id='" + grandparentDiv.id + "']";
+
+    colorInput.addEventListener("change", (event) => {
+        const updateDiv = document.querySelector(grandparentDivID);
+
+        if(updateDiv) {
+            updateDiv.style.backgroundColor = event.target.value;
+        }
+    });
+
+    colorInput.select();
+
+    colorInputDiv.appendChild(colorInput);
+
+    parentDiv.appendChild(colorInputDiv);
+    
+}
+
+//Delete button should deleted tasks and subtasks
+function addDeleteButton(grandparentDiv, parentDiv) {
+
+    const deleteBtnDiv = document.createElement("div");
+    deleteBtnDiv.setAttribute('class', 'col buttonDiv');
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute('type', 'button');
+
+    const deleteBtnText = document.createTextNode("Delete");
+
+    deleteBtn.appendChild(deleteBtnText);
+
+    const grandparentDivID = "[id='" + grandparentDiv.id + "']";
+    //const parentDivID = "[id='" + parentDiv.id + "']";
+
+    deleteBtn.addEventListener("click", () => {
+        if(deleteBtn.click) {
+            const deleteDiv = document.querySelector(grandparentDivID);
+            deleteDiv.remove();
+        } else {
+            console.log("Not Clicked");
+        }
+    });
+
+
+    deleteBtnDiv.appendChild(deleteBtn);
+
+    parentDiv.appendChild(deleteBtnDiv);
+
+}
+

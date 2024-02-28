@@ -28,6 +28,18 @@
     JavaScript getElementByID: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
     JavaScript QuerySelector Bug Fix: https://bobbyhadz.com/blog/javascript-failed-to-execute-queryselector-on-document
     JavaScript Set Input Required: https://www.w3schools.com/jsref/prop_text_required.asp
+    Using Emojis: https://www.kirupa.com/html5/emoji.htm
+    Trashbin Emoji: https://emojiguide.org/wastebasket
+    JavaScript Maps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+    Map of Elements: https://search.brave.com/search?q=How+to+have+a+map+of+html+elements+js && 
+                        https://search.brave.com/search?q=How+to+have+a+map+of+html+elements+js&tf=at
+    Get All Values from QuerySelectorAll: https://search.brave.com/search?q=How+to+get+all+values+from+queryselectorall+js
+    JavaSCript Array of Objects: https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
+    Checkbox checked: https://stackoverflow.com/questions/386281/how-to-implement-select-all-check-box-in-html
+    JavaScript Box Shadow: https://www.w3schools.com/jsref/prop_style_boxshadow.asp
+                            https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_boxshadow
+    -
+
 -->
 
 
@@ -65,16 +77,29 @@
             </div>
 
             <div class="row align-items-center">
-                <form id="thisForm" class="form">
+                <form id="inputForm" class="form">
 
-                    <div>
-                        <label for="task">Task:</label>
-                        <input type="text" name="task" id="task" required />
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <label for="task">Task:</label>
+                            <input type="text" name="task" id="task" required />
+                        </div>
+                        
+                        <div class="col">
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date"/>
+                        </div>
 
-                        <label for="date">Date:</label>
-                        <input type="date" name="date" id="date" />
+                        <div class="col">
+                            <button type="button" id="subtaskSubmit" onClick="addSubTaskInput();">Add Subtask +</button>
+                        </div>
+
+                        <div id="subTaskInputs" class="row">
+
+                        </div>
 
                         <button type="submit" id="taskSubmit">Submit</button>
+
                     </div>
 
                     <!--
