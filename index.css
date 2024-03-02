@@ -1,9 +1,22 @@
+html, body {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(232,162,63);
+    background: -moz-radial-gradient(circle, rgba(232,162,63,1) 0%, rgba(171,255,253,1) 60%, rgba(255,255,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(232,162,63,1) 0%, rgba(171,255,253,1) 60%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgba(232,162,63,1) 0%, rgba(171,255,253,1) 60%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8a23f",endColorstr="#ffffff",GradientType=1); 
+}
+
 p {
     color: black;
 }
 
 .form {
-    background-color: rgb(245,245,220);
+    background-color: rgba(233, 233, 200, 45);
+    border: 1px solid black;
 }
 
 /*
@@ -13,7 +26,18 @@ Nearer to the list <- 100 && 0 -> Farther away from list
 
 
 .checkboxDiv {
-    max-width: 2vw;
+
+    @media (max-width: 600px) {
+        max-width: 10vw;
+    }
+
+    @media (min-width: 600px) and (max-width: 900px) {
+        max-width: 5vw;
+    }
+
+    @media (min-width: 901px) {
+        max-width: 2vw;
+    }
 }
 
 .listDiv {
@@ -25,11 +49,32 @@ Nearer to the list <- 100 && 0 -> Farther away from list
 }
 
 .colorCodeDiv {
-    max-width: 10vw;
+
+    @media (max-width: 600px) {
+        max-width: 75vw;
+    }
+
+    @media (min-width: 600px) and (max-width: 900px) {
+        max-width: 50vw;
+    }
+
+    @media (min-width: 901px) {
+        max-width: 10vw;
+    }
 }
 
 .buttonDiv {
-    max-width: 5vw;
+    @media (max-width: 600px) {
+        max-width: 30vw;
+    }
+
+    @media (min-width: 600px) and (max-width: 900px) {
+        max-width: 15vw;
+    }
+
+    @media (min-width: 901px) {
+        max-width: 5vw;
+    }
 }
 
 
@@ -39,4 +84,8 @@ Nearer to the list <- 100 && 0 -> Farther away from list
 
 #completedTasks {
     background-color: lightgreen;
+}
+
+#subTaskInputCont {
+    padding-top: 1vh;
 }

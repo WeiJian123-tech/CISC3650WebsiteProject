@@ -1,44 +1,245 @@
 <!--
-    Special thanks to:
-    HTML Skeleton: https://www.w3schools.com/w3css/w3css_web_html.asp
-    Bootstrap: https://getbootstrap.com/docs/5.1/getting-started/introduction/
-    HTML Forms: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
-    Bootstrap Containers: https://getbootstrap.com/docs/5.1/layout/containers/
-    Bootstrap Rows: https://getbootstrap.com/docs/5.1/layout/gutters/#row-columns-gutters
-    Boostrap Columns: https://getbootstrap.com/docs/5.1/layout/columns/
-    HTML Submit Input VS Submit Button: https://html.com/attributes/button-type/
-    JavaScript Input Text Value Property: https://www.w3schools.com/jsref/prop_text_value.asp
-    JavaScript Create Element: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-    Client-Side HTML Form: https://stackoverflow.com/a/5627028
-    HTML Fieldset: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
-    HTML checkbox: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#examples
-    Javascript Add Classes to HTML Elements: https://www.educative.io/answers/how-to-add-an-id-to-element-in-javascript, https://stackoverflow.com/a/196038
-    Bootstrap Background Color: https://getbootstrap.com/docs/5.0/utilities/background/#background-color
-    How to set type attribute to an html element in javascript:https://search.brave.com/search?q=How+to+set+type+attribute+to+an+html+element+in+javascript
-    Checkbox onlclick() function: https://www.delftstack.com/howto/javascript/manage-html-checkboxes-onclick-in-javascript/#manage-html-checkboxes-with-onclick-event-using-javascript
-    Bootstrap Accordian: https://getbootstrap.com/docs/5.3/components/accordion/
-    No Nested Buttons: https://stackoverflow.com/questions/39386497/can-i-nest-button-inside-another-button
-    Mozilla Anchor Tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
-    Replace HTML element: https://www.tutorialspoint.com/how-to-replace-an-html-element-with-another-one-using-javascript
-    Input Color: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
-    JavaScript Remove: https://developer.mozilla.org/en-US/docs/Web/API/Element/remove
-    JavaScript Background Color: https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
-    JavaScript QuerySelectorAll: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
-    JavaScript Random ID Generator: https://dev.to/rahmanfadhil/how-to-generate-unique-id-in-javascript-1b13
-    JavaScript getElementByID: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
-    JavaScript QuerySelector Bug Fix: https://bobbyhadz.com/blog/javascript-failed-to-execute-queryselector-on-document
-    JavaScript Set Input Required: https://www.w3schools.com/jsref/prop_text_required.asp
-    Using Emojis: https://www.kirupa.com/html5/emoji.htm
-    Trashbin Emoji: https://emojiguide.org/wastebasket
-    JavaScript Maps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-    Map of Elements: https://search.brave.com/search?q=How+to+have+a+map+of+html+elements+js && 
-                        https://search.brave.com/search?q=How+to+have+a+map+of+html+elements+js&tf=at
-    Get All Values from QuerySelectorAll: https://search.brave.com/search?q=How+to+get+all+values+from+queryselectorall+js
-    JavaSCript Array of Objects: https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
-    Checkbox checked: https://stackoverflow.com/questions/386281/how-to-implement-select-all-check-box-in-html
-    JavaScript Box Shadow: https://www.w3schools.com/jsref/prop_style_boxshadow.asp
-                            https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_boxshadow
-    -
+    Developed by: Wei Jian Zhen
+-->
+
+<!--
+
+    Citations/References:
+
+        These references were followed and used as guides unless specified otherwise.
+
+        w3schools:
+
+            HTML Skeleton: HTML Skeleton. (n.d.). https://www.w3schools.com/w3css/w3css_web_html.asp
+
+                Thank you to w3schools for the HTML skeleton for this project. I added content such as link, div, and button tags within the HTML skeleton.
+                
+            JavaScript Input Text Value Property: HTML DOM Input Text value Property. (n.d.). https://www.w3schools.com/jsref/prop_text_value.asp
+            JavaScript Background Color: HTML DOM Style BackgroundColor property. (n.d.). https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
+            JavaScript Set Input Required: HTML DOM Input Text required Property. (n.d.). https://www.w3schools.com/jsref/prop_text_required.asp
+            JavaScript Box Shadow: HTML DOM Style BoxShadow Property. (n.d.). https://www.w3schools.com/jsref/prop_style_boxshadow.asp &&
+                W3Schools online HTML editor. (n.d.). https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_boxshadow
+            CSS Border Shorthand: CSS Borders - Shorthand property. (n.d.). https://www.w3schools.com/css/css_border_shorthand.asp
+
+        bootstrap:
+
+            Thank you to Bootstrap's documentation for providing pieces of code that were added as a part of the HTML/JavaScript code
+            for this project to beautify the webpage.
+
+            HTML: Added Bootstrap classes with class=""
+            JavaScript: Added Bootstrap classes to HTML elements with .setAtrribute() function.
+
+            Bootstrap: Contributors, M. O. J. T. a. B. (n.d.). Introduction. https://getbootstrap.com/docs/5.1/getting-started/introduction/
+            Bootstrap Containers: Contributors, M. O. J. T. a. B. (n.d.-a). Containers. https://getbootstrap.com/docs/5.1/layout/containers/
+            Bootstrap Rows: Contributors, M. O. J. T. a. B. (n.d.-b). Gutters. https://getbootstrap.com/docs/5.1/layout/gutters/#row-columns-gutters
+            Boostrap Columns: Contributors, M. O. J. T. a. B. (n.d.-a). Columns. https://getbootstrap.com/docs/5.1/layout/columns/
+            Bootstrap Background Color: Contributors, M. O. J. T. a. B. (n.d.-a). Background. https://getbootstrap.com/docs/5.0/utilities/background/#background-color
+            Bootstrap Accordian: Contributors, M. O. J. T. a. B. (n.d.-a). Accordion. https://getbootstrap.com/docs/5.3/components/accordion/
+            Bootstrap Buttons: Contributors, M. O. J. T. a. B. (n.d.-c). Buttons. https://getbootstrap.com/docs/5.0/components/buttons/
+            Bootstrap List Group: Contributors, M. O. J. T. a. B. (n.d.-h). List group. https://getbootstrap.com/docs/5.0/components/list-group/
+
+        mozilla:
+
+            HTML Forms: : The Form element - HTML: HyperText Markup Language | MDN. (2024, February 22). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+            JavaScript Create Element: Document: createElement() method - Web APIs | MDN. (2023, July 7). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+            HTML Fieldset: : The Field Set element - HTML: HyperText Markup Language | MDN. (2024, February 22). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+            HTML checkbox:  - HTML: HyperText Markup Language | MDN. (2024, January 23). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#examples
+            JavaScript appendChild(): Node: appendChild() method - Web APIs | MDN. (2023, April 13). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+            Mozilla Anchor Tags: : The Anchor element - HTML: HyperText Markup Language | MDN. (2024, February 22). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+            Input Color:  - HTML: HyperText Markup Language | MDN. (2024, January 15). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color
+            JavaScript Remove: Element: remove() method - Web APIs | MDN. (2023, April 7). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Element/remove
+            JavaScript QuerySelectorAll: Document: querySelectorAll() method - Web APIs | MDN. (2023, July 22). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+            JavaScript getElementByID: Document: getElementById() method - Web APIs | MDN. (2023, December 21). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+            CSS Media Queries: Using media queries - CSS: Cascading Style Sheets | MDN. (2024, February 2). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
+        html.com:
+
+            HTML Submit Input VS Submit Button: Tutorials, A. I. a. T. W. W. S. I. D. D. A. (2020, January 8). Attribute for TYPE = BUTTON | SUBMIT | RESET. HTML.com. https://html.com/attributes/button-type/
+
+        stackoverflow:
+
+            Client-Side HTML Form: 
+
+                HTML form that doesn’t actually submit anything to the server (Client-Side processing in JavaScript). (n.d.). Stack Overflow. https://stackoverflow.com/a/5627028
+            
+                Thank you to Paul Rudd (https://stackoverflow.com/users/702860/paul-rudd) for asking their question: https://stackoverflow.com/q/5626940
+                
+                Thank you to mplungjan (https://stackoverflow.com/users/295783/mplungjan) for answering Paul Rudd's question: https://stackoverflow.com/a/5627028
+
+                mplungjan's answer provided the basis for my window.onload function in index.js. I modified the second function that had e.preventDefault()
+                to variables to get HTML elements for tasks and a function that created those tasks.
+            
+            Javascript Add Classes to HTML Elements: 
+
+                How can I change an element’s class with JavaScript? (n.d.). Stack Overflow. https://stackoverflow.com/a/196038
+
+                Thank you to Nathan Smith (https://stackoverflow.com/users/4998/nathan-smith) for asking their question: https://stackoverflow.com/q/195951
+
+                Thank you to Peter Boughton (https://stackoverflow.com/users/9360/peter-boughton) and edited by Glenn Antony Sheen (https://stackoverflow.com/users/14870013/glenn-antony-sheen) for the provided answer: https://stackoverflow.com/a/196038
+
+                Peter Boughton's answer was used in a previous version of this project to try to add classes to HTML elements created in Javascript.
+                Peter Boughton's answer is not used anymore in this version.
+
+            No Nested Buttons: 
+
+                Can I nest button inside another button? (n.d.). Stack Overflow. https://stackoverflow.com/questions/39386497/can-i-nest-button-inside-another-button
+
+                Thank you to AndrewMk (https://stackoverflow.com/users/6777158/andrewmk) for asking their question: https://stackoverflow.com/q/39386497
+
+                Thank you to web-tiki (https://stackoverflow.com/users/1811992/web-tiki) and edited by Kobi (https://stackoverflow.com/users/7586/kobi) for the provided answer: https://stackoverflow.com/a/39386695
+
+                web-tiki's answer helped me realize that I needed to redesign my project to this current version by changing my HTML and JavaScript code.
+
+            Checkbox checked: 
+
+                How to implement “select all” check box in HTML? (n.d.). Stack Overflow. https://stackoverflow.com/questions/386281/how-to-implement-select-all-check-box-in-html
+
+                Thank you to user48094 (https://stackoverflow.com/users/48094/user48094) edited by Peter Mortensen (https://stackoverflow.com/users/63550/peter-mortensen) for providing this question: https://stackoverflow.com/q/386281
+
+                Thank you to Sumit (https://stackoverflow.com/users/2741678/sumit) for answering user48094's question: https://stackoverflow.com/a/35218069
+
+                Sumit's answer led to an answer as how to select all subtask checkboxes when a task checkbox is clicked. 
+                I modified Sumit's line of JavaScript code only inside the if statement and changed it to `subCheckBox.checked = true;` and `subCheckBox.checked = false;`.
+
+        brave search & AI:
+
+            Brave AI. (n.d.). Brave Search. Retrieved March 2, 2024, from https://search.brave.com/search?q=How+to+set+type+attribute+to+an+html+element+in+javascript
+
+            Prompt: How to set type attribute to an html element in javascript
+
+            Brave AI Answer:
+
+            How to set type attribute to an html element in javascript
+
+            To set the type attribute of an HTML element in JavaScript, you can use the setAttribute() method. Here’s a step-by-step guide on how to do it:
+
+                Select the HTML element you want to modify. You can do this by using its id, class, or any other attribute. In this example, let’s assume we have an input element with an id of “myInput”:
+
+                <input id="myInput" type="text">
+                
+
+            Use the getElementById() method to get the input element and store it in a variable:
+
+            const inputElement = document.getElementById('myInput');
+            
+
+            Now, use the setAttribute() method to set the type attribute of the input element:
+
+            inputElement.setAttribute('type', 'password');
+            
+
+            In this example, we’re changing the type from “text” to “password”. You can set it to any other valid input type, such as “number”, “email”, etc.
+
+            If you want to change the type attribute dynamically based on a condition or user interaction, you can use an event listener to call the setAttribute() method:
+
+            inputElement.addEventListener('click', function() {
+            if (/* some condition */) {
+                inputElement.setAttribute('type', 'password');
+            } else {
+                inputElement.setAttribute('type', 'text');
+            }
+            });
+            
+
+                In this example, the type attribute will change from “text” to “password” when the input element is clicked, and back to “text” when clicked again.
+
+            Remember to adapt the code to your specific use case and HTML structure. Always make sure to validate user input and handle errors properly to ensure the security and stability of your application.
+
+
+            I discovered that you can use .setAttribute() function to set type attributes from classes to ids for HTML elements in JavaScript. 
+            .setAttribute() is utilized throughout index.js. 
+
+
+            Brave AI. (n.d.-b). Brave Search. Retrieved March 2, 2024, from https://search.brave.com/search?q=How+to+get+all+values+from+queryselectorall+js
+            
+            Prompt: How to get all values from queryselectorall js
+
+            Brave AI Answer:
+
+            How to get all values from queryselectorall js
+
+            To get all values from querySelectorAll() in JavaScript, you can follow these steps:
+
+                Use the querySelectorAll() method to select elements based on a CSS selector.
+                The method returns a NodeList containing all the matching elements.
+                Iterate over the NodeList and access each element’s value.
+
+            Here’s an example in Markdown:
+
+            // Select all elements with the class "example"
+            const elements = document.querySelectorAll(".example");
+
+            // Iterate over the NodeList and access each element's value
+            elements.forEach((element) => {
+            console.log(element.textContent);
+            });
+            
+
+            In the code above, we first use querySelectorAll(".example") to select all elements with the class name “example”. This returns a NodeList containing all matching elements. Then, we use the forEach() method to iterate over the NodeList and access each element’s value by using the textContent property. You can replace textContent with any other property or method you want to use to get the values from the selected elements.
+
+            Brave AI's Answer was not used because it was difficult to implement selecting all classes with elements.forEach as a solution in my JavaScript code index.js.
+
+        tutorialspoint:
+
+            Replace HTML element: How to replace an HTML element with another one using JavaScript? (n.d.). https://www.tutorialspoint.com/how-to-replace-an-html-element-with-another-one-using-javascript
+
+        dev.to:
+
+            JavaScript Random ID Generator: Fadhil, R. (2019, December 22). How to generate unique ID in JavaScript. DEV Community. https://dev.to/rahmanfadhil/how-to-generate-unique-id-in-javascript-1b13
+
+            Thank you to Rahman Fadhil (https://dev.to/rahmanfadhil) for writing this article providing an answer as to generate unique ids with
+            Math.floor(Math.random() * 100) and Date.now(). Also thank you to coderkearns (https://dev.to/coderkearns) for their piece of code 
+            Math.floor(Math.random() * Date.now()) that is used to generate unique ids for the container divs of tasks and subtasks.
+
+            Assigned two variables that reference Math.floor(Math.random() * Date.now()) in addTask() to be passed as parameters in addTaskItem().
+
+        bobbyhadz:
+
+            JavaScript QuerySelector Bug Fix: Failed to execute querySelector on Document [Solved] | bobbyhadz. (n.d.). Blog - Bobby Hadz. https://bobbyhadz.com/blog/javascript-failed-to-execute-queryselector-on-document
+
+            Thank you to Borislav Hadzhiev (https://bobbyhadz.com/about) for their article about fixing JavaScript QuerySelector bug,
+            specifically this answer: https://bobbyhadz.com/blog/javascript-failed-to-execute-queryselector-on-document#pass-the-entire-attribute-to-the-queryselector-method
+            which I set as a variable that added two strings with a parameter to be called instead of just one single string.
+
+            const first = document.querySelector("[id='1box']");
+
+            modified to 
+
+            const grandparentDivID = "[id='" + grandparentDiv.id + "']";
+
+            colorInput.addEventListener("change", (event) => {
+                const updateDiv = document.querySelector(grandparentDivID);
+
+                if(updateDiv) {
+                    updateDiv.style.backgroundColor = event.target.value;
+                }
+            });
+
+        freecodecamp:
+
+            JavaScript Array of Objects: Polesny, O. (2022, January 7). JavaScript Array of Objects tutorial – How to create, update, and loop through objects using JS array methods. freeCodeCamp.org. https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
+
+            Thank you to Ondrej Polesny (https://www.freecodecamp.org/news/author/ondrej/) for their article about Array of Objects.
+
+            I learned about .push(), .splice(), and .insert(). I utilized .push() to add all subtask input values to arrays that could be accessed and modified in addCheckBox() function.
+        
+        Educative.io: 
+
+            Javascript Add Classes to HTML Elements: Educative. (n.d.). Educative Answers - trusted answers to developer questions. https://www.educative.io/answers/how-to-add-an-id-to-element-in-javascript
+
+        delftstack:
+
+            Checkbox onclick() function: Tauseef, T. (2023, October 12). The checkbox onclick events in JavaScript. Delft Stack. https://www.delftstack.com/howto/javascript/manage-html-checkboxes-onclick-in-javascript/#manage-html-checkboxes-with-onclick-event-using-javascript
+    
+            Thank you to Tahseen Tauseef (https://www.delftstack.com/author/tahseen-tauseef/) for their article about checkbox onclick functions which was helpful
+            to follow to add functionality to `add subtask +` and `remove subtask -` HTML buttons.
+
+        cssgradient.io:
+
+            CSS Body Background Gradient Color: CSS Gradient — generator, maker, and background. (n.d.). CSS Gradient. https://cssgradient.io/
+    
+            Selected a CSS gradient with max-compatibility (IE6+) checkbox enabled. Was not a default that the website provided. Copied and pasted into index.css.
+        
 
 -->
 
@@ -63,7 +264,6 @@
         
     </head>
     <body>
-
         <!--Use HTML Forms to submit task text and date.-->
         <!--
         <input type="date" />
@@ -73,7 +273,7 @@
             
             <div class="row align-items-center">
                 <h1>To-do List</h1>
-                <p>Welcome to your to-do list! Please type within the input box your tasks.</p>
+                <p>Welcome to your to-do list! Please type your tasks within the input box.</p>
             </div>
 
             <div class="row align-items-center">
@@ -91,14 +291,18 @@
                         </div>
 
                         <div class="col">
-                            <button type="button" id="subtaskSubmit" onClick="addSubTaskInput();">Add Subtask +</button>
+                            <button type="button" class="btn btn-secondary" onClick="addSubTaskInput();">Add Subtask +</button>
                         </div>
 
-                        <div id="subTaskInputs" class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary" onClick="removeSubTaskInput();">Remove Subtask -</button>
+                        </div>
+
+                        <div id="subTaskInputCont" class="row">
 
                         </div>
 
-                        <button type="submit" id="taskSubmit">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="taskSubmit">Submit</button>
 
                     </div>
 
@@ -116,7 +320,7 @@
 
                             <h6>Uncompleted Tasks:</h6>
 
-                            <fieldset id="uncompletedTasks">
+                            <fieldset id="uncompletedTasks" class="list-group">
 
                                 
 
@@ -124,7 +328,7 @@
 
                             <h6>Completed Tasks:</h6>
 
-                            <fieldset id="completedTasks">
+                            <fieldset id="completedTasks" class="list-group">
 
                             </fieldset>
                             

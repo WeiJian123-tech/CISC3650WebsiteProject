@@ -30,8 +30,16 @@ window.onload=function() {
     }
 }
 
+/*
+Adds labels, an input to submit a subtask, and a date input to select a date.
+*/
 function addSubTaskInput() {
-    const subTaskInputDiv = document.getElementById("subTaskInputs");
+    //Container to hold each subtask submission form.
+    const subTaskInputCont = document.getElementById("subTaskInputCont");
+
+    //Container to hold a subtask submission form.
+    const subTaskInputDiv = document.createElement("div");
+    subTaskInputDiv.setAttribute('class', 'subtaskInputs');
 
     const subTaskInputLabel = document.createElement("label");
     subTaskInputLabel.setAttribute('for', 'subtask');
@@ -61,6 +69,17 @@ function addSubTaskInput() {
     subTaskInputDiv.appendChild(subTaskInput);
     subTaskInputDiv.appendChild(subTaskDateLabel);
     subTaskInputDiv.appendChild(subDateInput);
+
+    subTaskInputCont.appendChild(subTaskInputDiv);
+}
+
+/*
+Removes the div that stores labels, an input to submit a subtask, and a date input to select a date.
+*/
+function removeSubTaskInput() {
+    const subTaskInputDiv = document.querySelector(".subtaskInputs");
+
+    subTaskInputDiv.remove();
 }
 
 
@@ -90,6 +109,7 @@ function addTaskItem(uncompletedTasks, completedTasks, task, date, subtasks, sub
     //Container div that encapsulates a task and its subtasks.
     const taskItem = document.createElement("div");
     taskItem.setAttribute('id', id1);
+    taskItem.setAttribute('class', 'list-group-item')
 
     //Container div to store a task
     const taskDiv = document.createElement("div");
@@ -134,7 +154,7 @@ function addCheckBox(uncompletedTasks, completedTasks, grandparentDiv, parentDiv
     //Create HTML input element for parent checkBoxDiv element
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
-    checkBox.setAttribute("class", "checkBox");
+    checkBox.setAttribute("class", "checkBox form-check-input me-1");
 
     //Appends HTML input element to its parent div tags
     checkBoxDiv.appendChild(checkBox);
@@ -171,7 +191,7 @@ function addCheckBox(uncompletedTasks, completedTasks, grandparentDiv, parentDiv
         //Create HTML input element for parent checkBoxDiv element
         const subCheckBox = document.createElement("input");
         subCheckBox.setAttribute("type", "checkbox");
-        subCheckBox.setAttribute("class", "subCheckBox");
+        subCheckBox.setAttribute("class", "subCheckBox form-check-input me-1");
         
         const subtask = subtaskArr[i];
         const subdate = subdateArr[i];
@@ -312,6 +332,7 @@ function addDeleteButton(grandparentDiv, parentDiv) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.setAttribute('type', 'button');
+    deleteBtn.setAttribute('class', 'btn btn-danger');
 
     const deleteBtnText = document.createTextNode("Delete");
 
