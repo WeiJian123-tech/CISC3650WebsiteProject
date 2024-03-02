@@ -12,7 +12,6 @@ window.onload=function() {
         const subDates = document.querySelectorAll("input.subdates");
 
         /*
-
         console.log("Task: " + task + " | Date: " + date);
 
         for(const s of subTasks) {
@@ -22,7 +21,6 @@ window.onload=function() {
         for(const d of subDates) {
             console.log(d.value);
         }
-
         */
 
         addTask(task, date, subTasks, subDates);
